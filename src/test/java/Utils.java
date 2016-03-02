@@ -46,20 +46,6 @@ public class Utils {
 
     protected void LoginToJenkins() throws Exception
     {
-        try
-        {
-            Properties properties = new Properties();
-            properties.setProperty("username","eprisacaru");
-            properties.setProperty("password","alfresco");
-            properties.setProperty("url","http://172.29.101.40:8080/");
-            FileWriter writer = new FileWriter("src/test/resources/credentials.properties");
-            properties.store(writer,null);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
         driver = new FirefoxDriver();
         driver.navigate().to(GetProperty("url"));
         driver.manage().window().maximize();

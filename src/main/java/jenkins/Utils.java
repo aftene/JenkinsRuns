@@ -47,6 +47,7 @@ public class Utils {
 
     public void LoginToJenkins() throws Exception
     {
+    	   System.out.println("Login to jenkins");
         driver = new FirefoxDriver();
         driver.navigate().to(GetProperty("url"));
         driver.manage().window().maximize();
@@ -78,7 +79,8 @@ public class Utils {
 
     public void SelectProject(String project) {
 
-        WebElement projectName = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='" + project + "']/td[3]/a")));
+    	System.out.println("Select 42N-WebdriverRun tab");
+    	WebElement projectName = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='" + project + "']/td[3]/a")));
         projectName.click();
     }
 
@@ -90,7 +92,8 @@ public class Utils {
 
     public void SelectTab(String text)
     {
-        WebElement tab = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href*='/view/" + text + "/']")));
+    	System.out.println("Select 42N tab");
+    	WebElement tab = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href*='/view/" + text + "/']")));
         tab.click();
     }
 

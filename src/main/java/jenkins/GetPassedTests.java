@@ -15,6 +15,7 @@ public class GetPassedTests extends Utils
 
     public GetPassedTests(String filename)
     {
+    	  System.out.println("Starting test!");
         myTXTfile = CreateFile(filename);
     }
 

@@ -1,4 +1,4 @@
-target
+
 *.log
 
 .DS_Store
@@ -8,3 +8,7 @@ target
 src/.DS_Store
 
 *.class
+*.properties
+src/test/resources/credentials.properties
+
+src/test/resources/credentials.properties

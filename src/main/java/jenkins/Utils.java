@@ -1,3 +1,10 @@
+package jenkins;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -5,12 +12,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Properties;
 
 
 /**
@@ -44,7 +45,7 @@ public class Utils {
         return returnedProp;
     }
 
-    protected void LoginToJenkins() throws Exception
+    public void LoginToJenkins() throws Exception
     {
         driver = new FirefoxDriver();
         driver.navigate().to(GetProperty("url"));
@@ -68,26 +69,26 @@ public class Utils {
         loginButton.click();
     }
 
-    protected void SelectReport(String report) {
+    public void SelectReport(String report) {
 
         WebElement reportLink = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//a[contains(text(),'" + report +"')]")));
         reportLink.click();
 
     }
 
-    protected void SelectProject(String project) {
+    public void SelectProject(String project) {
 
         WebElement projectName = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='" + project + "']/td[3]/a")));
         projectName.click();
     }
 
-    protected void SelectBuild(String build) {
+    public void SelectBuild(String build) {
 
         WebElement buildNo = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='pane build-name']/a[@href='" + build + "']")));
         buildNo.click();
     }
 
-    protected void SelectTab(String text)
+    public void SelectTab(String text)
     {
         WebElement tab = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("a[href*='/view/" + text + "/']")));
         tab.click();

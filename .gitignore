@@ -1,0 +1,14 @@
+
+*.log
+
+.DS_Store
+
+.DS_Store
+
+src/.DS_Store
+
+*.class
+*.properties
+src/test/resources/credentials.properties
+
+src/test/resources/credentials.properties

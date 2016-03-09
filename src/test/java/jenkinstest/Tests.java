@@ -1,11 +1,10 @@
 package jenkinstest;
 
-import org.junit.Test;
-
+import jenkins.GatherStatistics;
 import jenkins.GetAllTests;
 import jenkins.GetFailedTests;
 import jenkins.GetPassedTests;
-import junit.framework.Assert;
+import org.junit.Test;
 
 /**
  * Created by P3700509 on 2/27/2016.
@@ -151,7 +150,7 @@ public class Tests {
 	}
 
 	@Test
-	public void GetAllTestsFrom50NProject1() throws Exception { // for elena
+	public void GetAllTestsFrom50NProject1() throws Exception {
 
 		GetAllTests prereqGetAllT = new GetAllTests("AllTests50NProjRun-1-36.txt");
 
@@ -178,6 +177,26 @@ public class Tests {
 	}
 
 	@Test
+	public void GetTestSuitesFor50NProj() throws Exception {
+		GetAllTests prereqGetAllT = new GetAllTests("AllTests50NProjRun-1-36.txt");
+
+		prereqGetAllT.AddTestSuiteNameToFile();
+
+	}
+
+	@Test
+	public void GetStatisticsFor50NProj()
+	{
+		GetAllTests prereqGetAllT = new GetAllTests("AllTests50NProjRun-1-36.txt");
+		GatherStatistics statistics = new GatherStatistics();
+
+		statistics.PassedPercentage(prereqGetAllT.GetTXTfile());
+		statistics.GetTotalRunTime(prereqGetAllT.GetTXTfile());
+
+	}
+
+
+	@Test
 	public void GetAllTestsFrom42NProject() throws Exception {
 
 		GetAllTests prereqGetAllT = new GetAllTests("AllTests42NProjRun33.txt");
@@ -202,6 +221,8 @@ public class Tests {
 
 		System.out.println("Get all the tests");
 		prereqGetAllT.TestCaseReport();
+
+		prereqGetAllT.driver.close();
 	}
 
 	@Test
@@ -209,5 +230,19 @@ public class Tests {
 		GetAllTests prereqGetAllT = new GetAllTests("AllTests42NProjRun33.txt");
 
 		prereqGetAllT.AddTestSuiteNameToFile();
+
 	}
+
+	@Test
+	public void GetStatisticsFor42NProj()
+	{
+		GetAllTests prereqGetAllT = new GetAllTests("AllTests42NProjRun33.txt");
+		GatherStatistics statistics = new GatherStatistics();
+
+		statistics.PassedPercentage(prereqGetAllT.GetTXTfile());
+		statistics.GetTotalRunTime(prereqGetAllT.GetTXTfile());
+
+	}
+
+
 }

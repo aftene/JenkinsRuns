@@ -1,13 +1,13 @@
 package jenkins;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.List;
 
 /**
  * Created by P3700509 on 2/27/2016.
@@ -18,6 +18,8 @@ public class GetAllTests extends Utils {
 	public GetAllTests(String filename) {
 		TXTfile = CreateFile(filename);
 	}
+
+	public File GetTXTfile(){ return TXTfile; }
 
 	public void TestCaseReport() {
 		WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("table")));
@@ -64,7 +66,6 @@ public class GetAllTests extends Utils {
 
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame(1);
-		// wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(1));
 
 		WebElement elem = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[1]/h2")));
 

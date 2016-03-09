@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GetTestIdsFromJenkins.iml" filepath="$PROJECT_DIR$/GetTestIdsFromJenkins.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jenkins-runs.iml" filepath="$PROJECT_DIR$/jenkins-runs.iml" />
     </modules>
   </component>
 </project>

@@ -1,17 +1,17 @@
 package jenkins;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Properties;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Properties;
 
 
 /**
@@ -26,14 +26,14 @@ public class Utils {
     public String j_login = "#yui-gen1-button";
 
     protected static final String timeout = "50000";
-    protected static WebDriver driver;
+    public static WebDriver driver;
     protected static WebDriverWait wait;
 
     public String GetProperty(String prop_name)
     {
         String returnedProp = null;
         try {
-            FileReader propertiesFile = new FileReader("src/test/resources/credentials.properties");
+            FileReader propertiesFile = new FileReader("/Users/p3700509/Desktop/AutomationProjects/JenkinsRuns/src/test/resources/credentials.properties");
             Properties property = new Properties();
             property.load(propertiesFile);
             returnedProp = property.getProperty(prop_name);
@@ -47,7 +47,7 @@ public class Utils {
 
     public void LoginToJenkins() throws Exception
     {
-    	   System.out.println("Login to jenkins");
+    	 //  System.out.println("Login to jenkins");
         driver = new FirefoxDriver();
         driver.navigate().to(GetProperty("url"));
         driver.manage().window().maximize();
@@ -105,7 +105,7 @@ public class Utils {
 
     protected File CreateFile(String FileName)
     {
-        String path= "C:\\selenium\\";
+        String path= "/Users/p3700509/Documents/Selenium/";
         File FileToCreate = new File(path.concat(FileName));
         try
         {

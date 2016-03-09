@@ -22,11 +22,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="GetTestIdsFromJenkins" />
+        <module name="jenkins-runs" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="GetTestIdsFromJenkins" target="1.5" />
+      <module name="jenkins-runs" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

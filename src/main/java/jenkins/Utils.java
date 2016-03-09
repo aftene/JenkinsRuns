@@ -146,9 +146,9 @@ public class Utils {
 
         driver.get("https://testlink.alfresco.com/login.php");
         WebElement user = driver.findElement(By.id("login"));
-        TypeText(user,"iaftene");
+        TypeText(user,GetProperty("username"));
         WebElement pass = driver.findElement(By.name("tl_password"));
-        TypeText(pass,"nFEhb^@w983h");
+        TypeText(pass,GetProperty("password"));
         driver.findElement(By.name("login_submit")).click();
 
     }

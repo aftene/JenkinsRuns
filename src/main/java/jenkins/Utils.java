@@ -49,13 +49,13 @@ public class Utils {
     {
     	 //  System.out.println("Login to jenkins");
         driver = new FirefoxDriver();
-        driver.navigate().to(GetProperty("url"));
+        driver.navigate().to(GetProperty("jenkinsURL"));
         driver.manage().window().maximize();
 
         wait = new WebDriverWait(driver, Integer.parseInt(timeout) / 1000);
 
-        String userName = GetProperty("username");
-        String password = GetProperty("password");
+        String userName = GetProperty("jenkinsUsername");
+        String password = GetProperty("jenkinsPassword");
 
         WebElement loginLink = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(login_link)));
         loginLink.click();
@@ -146,9 +146,9 @@ public class Utils {
 
         driver.get("https://testlink.alfresco.com/login.php");
         WebElement user = driver.findElement(By.id("login"));
-        TypeText(user,GetProperty("username"));
+        TypeText(user,GetProperty("testLinkUsername"));
         WebElement pass = driver.findElement(By.name("tl_password"));
-        TypeText(pass,GetProperty("password"));
+        TypeText(pass,GetProperty("testLinkPassword"));
         driver.findElement(By.name("login_submit")).click();
 
     }
